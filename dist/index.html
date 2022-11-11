@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/1996e6895b.js" crossorigin="anonymous"></script>
+    <!-- comment it before deploy -->
+    <link rel="stylesheet" href="./style.css" />
+    <title>To Do List</title>
+  <script defer src="runtime.js"></script><script defer src="index.js"></script></head>
+  <body>
+    <section class="todo">
+        <header class="todo-header">
+            <h3 class="todo-header-descr">Today's To Do</h3>
+            <a href="#" class="todo-header-refresh fa-solid fa-rotate"></a>
+        </header>
+        <section class="todo-container">
+            <form class="todo-add-form">
+                <input type="text" name="add" id="add" placeholder="Add to your list..." />
+            </form>
+        <p class="todo-list"></p>
+        </section>
+        <footer class="footer">
+            <a class="todo-clear">Clear all completed</a>
+        </footer>
+    </section>
+    <!-- comment it before deploy -->
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
