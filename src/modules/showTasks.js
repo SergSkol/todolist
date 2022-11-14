@@ -30,6 +30,11 @@ const showTasks = (list) => {
     taskDrag.classList.add('fa-solid');
     taskDrag.classList.add('fa-ellipsis-vertical');
 
+    const taskFinishEdit = addElement('a', taskItem, 'task-finish-edit');
+    taskFinishEdit.classList.add('fa-solid');
+    taskFinishEdit.classList.add('fa-check');
+    taskFinishEdit.classList.add('hide');
+
     const taskRemove = addElement('a', taskItem, 'task-remove');
     taskRemove.classList.add('fa-solid');
     taskRemove.classList.add('fa-trash');
@@ -43,6 +48,7 @@ const showTasks = (list) => {
 
     taskDescription.addEventListener('click', () => {
       taskDrag.classList.add('hide');
+      taskFinishEdit.classList.remove('hide');
       taskRemove.classList.remove('hide');
       taskDescription.focus();
       taskItem.classList.add('highlighted');
@@ -54,12 +60,23 @@ const showTasks = (list) => {
         list.editTask(task.id, taskDescription.value);
         saveTasks(list.arr);
         taskDrag.classList.remove('hide');
+        taskFinishEdit.classList.add('hide');
         taskRemove.classList.add('hide');
         taskItem.classList.remove('highlighted');
         taskCheckbox.removeAttribute('disabled');
       }
     });
 
+    taskFinishEdit.addEventListener('click', () => {
+      list.editTask(task.id, taskDescription.value);
+      saveTasks(list.arr);
+      taskDrag.classList.remove('hide');
+      taskFinishEdit.classList.add('hide');
+      taskRemove.classList.add('hide');
+      taskItem.classList.remove('highlighted');
+      taskCheckbox.removeAttribute('disabled');
+    });
+    
     taskRemove.addEventListener('click', () => {
       list.removeTask(task.id);
       saveTasks(list.arr);

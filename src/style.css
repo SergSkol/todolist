@@ -78,6 +78,13 @@ body {
   color: #3e3e3e;
 }
 
+.task-finish-edit {
+  margin: 0 auto;
+  margin-right: 10px;
+  color: #3e3e3e;
+  cursor: pointer;
+}
+
 .task-remove {
   margin: 0 auto;
   margin-right: 10px;
