@@ -14,7 +14,7 @@ toDoAdd.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
     myToDoList.addTask();
     saveTasks(myToDoList.arr);
-  };
+  }
 });
 
 toDoFinishEdit.addEventListener('click', () => {
