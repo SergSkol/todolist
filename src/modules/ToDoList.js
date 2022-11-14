@@ -1,7 +1,8 @@
+import { saveTasks } from "./storage.js";
+
 export default class ToDoList {
   constructor() {
     this.arr = [];
-    this.storageKey = 'todolist';
   }
 
   addTask() {
@@ -50,17 +51,6 @@ export default class ToDoList {
     });
   }
 
-  saveTasks() {
-    localStorage.setItem(this.storageKey, JSON.stringify(this.arr));
-  }
-
-  loadTasks() {
-    this.arr = JSON.parse(localStorage.getItem(this.storageKey));
-    if (this.arr == null) {
-      this.arr = [];
-    }
-  }
-
   showTasks() {
     function addElement(elementType, parent, className) {
       const element = document.createElement(elementType);
@@ -99,7 +89,7 @@ export default class ToDoList {
       taskCheckbox.addEventListener('click', () => {
         task.completed = !task.completed;
         taskDescription.classList.toggle('line-through');
-        this.saveTasks();
+        saveTasks(this.arr);
       });
 
       taskDescription.addEventListener('click', () => {
@@ -113,7 +103,7 @@ export default class ToDoList {
       taskDescription.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
           this.editTask(task.id, taskDescription.value);
-          this.saveTasks();
+          saveTasks(this.arr);
           taskDrag.classList.remove('hide');
           taskRemove.classList.add('hide');
           taskItem.classList.remove('highlighted');
@@ -123,7 +113,7 @@ export default class ToDoList {
 
       taskRemove.addEventListener('click', () => {
         this.removeTask(task.id);
-        this.saveTasks();
+        saveTasks(this.arr);
       });
     });
   }
