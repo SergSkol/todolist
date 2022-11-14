@@ -6,7 +6,7 @@ const showTasks = (list) => {
     element.classList.add(className);
     parent.appendChild(element);
     return element;
-  }
+  };
 
   const todoList = document.querySelector('.todo-list');
   list.arr.forEach((task) => {
@@ -65,6 +65,6 @@ const showTasks = (list) => {
       saveTasks(list.arr);
     });
   });
-}
+};
 
 export default showTasks;
