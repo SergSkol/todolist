@@ -76,7 +76,7 @@ const showTasks = (list) => {
       taskItem.classList.remove('highlighted');
       taskCheckbox.removeAttribute('disabled');
     });
-    
+
     taskRemove.addEventListener('click', () => {
       list.removeTask(task.id);
       saveTasks(list.arr);
