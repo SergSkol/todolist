@@ -1,7 +1,7 @@
 // import _ from 'lodash';
 import './style.css';
 import ToDoList from './modules/ToDoList.js';
-import { saveTasks, loadTasks } from "./modules/storage.js";
+import { saveTasks, loadTasks } from './modules/storage.js';
 
 const toDoAdd = document.querySelector('#add');
 const toDoClear = document.querySelector('.todo-clear');

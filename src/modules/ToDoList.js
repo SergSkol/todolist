@@ -1,4 +1,4 @@
-import { saveTasks } from "./storage.js";
+import { saveTasks } from './storage.js';
 
 export default class ToDoList {
   constructor() {
