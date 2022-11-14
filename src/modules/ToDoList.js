@@ -1,5 +1,3 @@
-import { saveTasks } from './storage.js';
-
 export default class ToDoList {
   constructor() {
     this.arr = [];
