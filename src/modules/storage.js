@@ -6,7 +6,7 @@ const saveTasks = (arr) => {
 
 const loadTasks = () => {
   let arr = JSON.parse(localStorage.getItem(storageKey));
-  if (arr == null) {
+  if (arr === null) {
     arr = [];
   }
   return arr;

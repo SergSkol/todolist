@@ -2,6 +2,7 @@
 import './style.css';
 import ToDoList from './modules/ToDoList.js';
 import { saveTasks, loadTasks } from './modules/storage.js';
+import showTasks from './modules/showTasks.js';
 
 const toDoAdd = document.querySelector('#add');
 const toDoClear = document.querySelector('.todo-clear');
@@ -20,5 +21,5 @@ toDoClear.addEventListener('click', () => {
 
 window.onload = () => {
   myToDoList.arr = loadTasks();
-  myToDoList.showTasks();
+  showTasks(myToDoList);
 };
