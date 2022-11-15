@@ -1,6 +1,8 @@
 import { saveTasks } from './storage.js';
 
 const showTask = (list, task) => {
+  let dragged;
+
   const addElement = (elementType, parent, className) => {
     const element = document.createElement(elementType);
     element.classList.add(className);
@@ -8,9 +10,26 @@ const showTask = (list, task) => {
     return element;
   };
 
+  const drag = (e) => {
+    dragged = e.target.parentNode;
+    e.dataTransfer.setData("text", dragged.id);
+  };
+
+  const drop = (e) => {
+    e.preventDefault();
+    const data = e.dataTransfer.getData("text");
+    e.target.appendChild(document.getElementById(data)); // need to change array and refresh. Or change DOM elements
+    dragged.parentNode.removeChild(document.getElementById(data));
+  };
+
+  const allowDrop = (e) => {
+    e.preventDefault();
+  };
+
   const todoList = document.querySelector('.todo-list');
   const taskItem = addElement('div', todoList, 'task-item');
   taskItem.setAttribute('id', task.id);
+
   const taskCheckbox = addElement('input', taskItem, 'task-checkbox');
   taskCheckbox.setAttribute('type', 'checkbox');
 
@@ -29,6 +48,7 @@ const showTask = (list, task) => {
   taskDrag.classList.add('fa-solid');
   taskDrag.classList.add('fa-ellipsis-vertical');
   taskDrag.setAttribute('draggable', true);
+  // taskDrag.setAttribute('ondragstart', 'drag(event)');
 
   const taskFinishEdit = addElement('a', taskItem, 'task-finish-edit');
   taskFinishEdit.classList.add('fa-solid');
@@ -80,6 +100,18 @@ const showTask = (list, task) => {
   taskRemove.addEventListener('click', () => {
     list.removeTask(task.id);
     saveTasks(list.arr);
+  });
+
+  taskDrag.addEventListener('dragstart', (event) => {
+    drag(event);
+  });
+
+  taskItem.addEventListener('drop', (event) => {
+    drop(event);
+  });
+
+  taskItem.addEventListener('dragover', (event) => {
+    allowDrop(event);
   });
 };
 
