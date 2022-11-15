@@ -20,7 +20,7 @@ const showTask = (list, task) => {
     const data = e.dataTransfer.getData('text');
     e.target.appendChild(document.getElementById(data));
     // need to change array and refresh. Or change DOM elements
-    
+
     dragged.parentNode.removeChild(document.getElementById(data));
   };
 
