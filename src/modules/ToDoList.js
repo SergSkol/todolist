@@ -31,8 +31,8 @@ export default class ToDoList {
   }
 
   moveTask(fromId, toId) {
-    const fromItem = this.arr.find(task => task.id === fromId);
-    const toItem = this.arr.find(task => task.id == toId);
+    const fromItem = this.arr.find((task) => task.id === fromId);
+    const toItem = this.arr.find((task) => task.id === toId);
     const toIndex = this.arr.indexOf(toItem);
     this.removeTask(fromId);
     this.arr.splice(toIndex, 0, fromItem);

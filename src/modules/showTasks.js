@@ -1,7 +1,6 @@
 import { saveTasks } from './storage.js';
 
 const showTask = (list, task) => {
-
   const addElement = (elementType, parent, className) => {
     const element = document.createElement(elementType);
     element.classList.add(className);
