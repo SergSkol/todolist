@@ -12,13 +12,15 @@ const showTask = (list, task) => {
 
   const drag = (e) => {
     dragged = e.target.parentNode;
-    e.dataTransfer.setData("text", dragged.id);
+    e.dataTransfer.setData('text', dragged.id);
   };
 
   const drop = (e) => {
     e.preventDefault();
-    const data = e.dataTransfer.getData("text");
-    e.target.appendChild(document.getElementById(data)); // need to change array and refresh. Or change DOM elements
+    const data = e.dataTransfer.getData('text');
+    e.target.appendChild(document.getElementById(data));
+    // need to change array and refresh. Or change DOM elements
+    
     dragged.parentNode.removeChild(document.getElementById(data));
   };
 
