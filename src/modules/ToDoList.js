@@ -3,12 +3,11 @@ export default class ToDoList {
     this.arr = [];
   }
 
-  addTask() {
-    const toDoAdd = document.querySelector('#add');
+  addTask(toDoAddValue) {
     const newItem = {
       id: Date.now(),
       index: this.arr.length + 1,
-      description: toDoAdd.value,
+      description: toDoAddValue,
       completed: false,
     };
 
