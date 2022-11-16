@@ -24,7 +24,7 @@ describe('Check add and remove of ToDoList class', () => {
   });
 
   test('Remove first task', () => {
-    const { id }  = toDoList.arr[0];
+    const { id } = toDoList.arr[0];
     document.body.innerHTML = `
     <div>
       <div id=${id}></div>
