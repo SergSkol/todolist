@@ -12,13 +12,15 @@ const myToDoList = new ToDoList();
 
 toDoAdd.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
-    myToDoList.addTask();
+    const toDoAdd = document.querySelector('#add');
+    myToDoList.addTask(toDoAdd.value);
     saveTasks(myToDoList.arr);
   }
 });
 
 toDoFinishEdit.addEventListener('click', () => {
-  myToDoList.addTask();
+  const toDoAdd = document.querySelector('#add');
+  myToDoList.addTask(toDoAdd.value);
   saveTasks(myToDoList.arr);
   const i = myToDoList.arr.length - 1;
   showTask(myToDoList, myToDoList.arr[i]);
