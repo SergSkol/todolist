@@ -41,6 +41,7 @@ body {
   margin: 0 auto;
   height: 8vh;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid darkgrey;
 }
@@ -49,6 +50,14 @@ body {
   border: none;
   width: 100%;
   margin-left: 10px;
+}
+
+.todo-finish-edit {
+  margin: 0 auto;
+  margin-left: 4px;
+  margin-right: 4px;
+  color: #3e3e3e;
+  cursor: pointer;
 }
 
 .todo-list {
