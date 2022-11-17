@@ -6,7 +6,7 @@ import ToDoList from './ToDoList.js';
 const toDoList = new ToDoList();
 
 describe('Check edit, complete and clear of ToDoList class', () => {
-  test('Edit task 1', () => {
+  test('Test Edit task 1', () => {
     toDoList.addTask('task 1');
     toDoList.addTask('task 2');
     const { id } = toDoList.arr[0];
@@ -14,13 +14,13 @@ describe('Check edit, complete and clear of ToDoList class', () => {
     expect(toDoList.arr[0].description).toEqual('new task 1');
   });
 
-  test('Complete task 1', () => {
+  test('Test Complete task 1', () => {
     const { id } = toDoList.arr[0];
     toDoList.completeTask(id);
     expect(toDoList.arr[0].completed).toEqual(true);
   });
 
-  test('Clear all completed', () => {
+  test('Test Clear all completed', () => {
     const { id } = toDoList.arr[0];
     document.body.innerHTML = `
      <div>
