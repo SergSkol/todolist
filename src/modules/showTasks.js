@@ -57,9 +57,9 @@ const showTask = (list, task) => {
   taskRemove.classList.add('hide');
 
   taskCheckbox.addEventListener('click', () => {
-    task.completed = !task.completed;
-    taskDescription.classList.toggle('line-through');
+    list.completeTask(task.id);
     saveTasks(list.arr);
+    taskDescription.classList.toggle('line-through');
   });
 
   taskDescription.addEventListener('click', () => {

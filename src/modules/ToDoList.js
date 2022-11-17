@@ -29,6 +29,13 @@ export default class ToDoList {
     this.reindexTasks();
   }
 
+  completeTask(id) {
+    const task = this.arr.find((task) => task.id === id);
+    const taskIndex = this.arr.indexOf(task);
+    const completed = this.arr[taskIndex].completed;
+    this.arr[taskIndex].completed = !completed;
+  }
+
   moveTask(fromId, toId) {
     const fromItem = this.arr.find((task) => task.id === fromId);
     const toItem = this.arr.find((task) => task.id === toId);

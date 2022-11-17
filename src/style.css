@@ -18,7 +18,7 @@ body {
 .todo-header {
   max-width: 500px;
   margin: 0 auto;
-  height: 8vh;
+  height: 42px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid darkgrey;
@@ -39,7 +39,7 @@ body {
 .todo-add-form {
   max-width: 500px;
   margin: 0 auto;
-  height: 8vh;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,7 +67,7 @@ body {
 .task-item {
   display: flex;
   align-items: center;
-  height: 8vh;
+  height: 42px;
   border-bottom: 1px solid darkgrey;
 }
 
@@ -105,7 +105,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 8vh;
+  height: 42px;
 }
 
 .todo-clear {
