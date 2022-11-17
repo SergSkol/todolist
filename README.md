@@ -1,6 +1,8 @@
 # To do list
 
 > "To Do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
+## Screenshot
+![image](https://user-images.githubusercontent.com/106581139/202180733-be7d0d3a-a4fe-4410-84b2-9edaf5f9a379.png)
 
 ## Built With
 
@@ -37,7 +39,7 @@ Contributions, issues, and feature requests are welcome!
 
 ### Go Live
 
-Follow the link (https://sergskol.github.io/todolist/dist)
+- Follow the link: [Pages](https://sergskol.github.io/todolist/dist)
 
 ## Show your support
 
