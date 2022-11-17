@@ -14,6 +14,14 @@ describe('Check edit, complete and clear of ToDoList class', () => {
     expect(toDoList.arr[0].description).toEqual('new task 1');
   });
 
+  test('Test Edit task 2', () => {
+    toDoList.addTask('task 1');
+    toDoList.addTask('task 2');
+    const { id } = toDoList.arr[1];
+    toDoList.editTask(id, 'new task 2');
+    expect(toDoList.arr[1].description).not.toMatch('new task 1');
+  });
+
   test('Test Complete task 1', () => {
     const { id } = toDoList.arr[0];
     toDoList.completeTask(id);
@@ -27,6 +35,6 @@ describe('Check edit, complete and clear of ToDoList class', () => {
        <div id=${id}></div>
      </div>`;
     toDoList.clearCompletedTasks();
-    expect(toDoList.arr.length).toEqual(1);
+    expect(toDoList.arr.length).toEqual(3);
   });
 });
