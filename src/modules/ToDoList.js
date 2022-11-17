@@ -32,7 +32,7 @@ export default class ToDoList {
   completeTask(id) {
     const task = this.arr.find((task) => task.id === id);
     const taskIndex = this.arr.indexOf(task);
-    const completed = this.arr[taskIndex].completed;
+    const { completed } = this.arr[taskIndex];
     this.arr[taskIndex].completed = !completed;
   }
 
