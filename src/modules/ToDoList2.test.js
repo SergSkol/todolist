@@ -15,11 +15,11 @@ describe('Check edit, complete and clear of ToDoList class', () => {
   });
 
   test('Test Edit task 2', () => {
-    toDoList.addTask('task 1');
-    toDoList.addTask('task 2');
+    toDoList.addTask('task 3');
+    toDoList.addTask('task 4');
     const { id } = toDoList.arr[1];
     toDoList.editTask(id, 'new task 2');
-    expect(toDoList.arr[1].description).not.toMatch('new task 1');
+    expect(toDoList.arr[1].description).not.toEqual('task 2');
   });
 
   test('Test Complete task 1', () => {

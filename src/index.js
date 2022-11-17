@@ -1,5 +1,5 @@
 // import _ from 'lodash';
-// import './style.css';
+import './style.css';
 import ToDoList from './modules/ToDoList.js';
 import { saveTasks, loadTasks } from './modules/storage.js';
 import { showTask, showTasks } from './modules/showTasks.js';
